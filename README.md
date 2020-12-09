@@ -1,9 +1,16 @@
-## WTF is this?
-I dunno.
+# magic-error
 
 ## How do I install it?
 
-You don't. I just created it no for particular reason. I might publish it one day. 
+`npm install --save magic-error`
+
+## Usage
+
+```js
+import createMagicError from 'magic-error';
+
+const err = createMagicError(new ReferenceError('Impossible does not exist'));
+```
 
 ## How does it work?
 It uses [proxy](https://tc39.es/ecma262/#sec-proxy-object-internal-methods-and-internal-slots) and sets traps for 2 internal methods:

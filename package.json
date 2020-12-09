@@ -1,0 +1,51 @@
+{
+  "name": "magic-error",
+  "version": "0.0.0",
+  "description": "Developer friendly JS Errors",
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P0lip/magic-error.git"
+  },
+  "keywords": [],
+  "author": "Jakub Rożek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/P0lip/magic-error/issues"
+  },
+  "homepage": "https://github.com/P0lip/magic-error#readme",
+  "scripts": {
+    "build": "NODE_ENV=production ./scripts/cjs-ify.mjs",
+    "lint": "eslint index.mjs",
+    "test": "NODE_ENV=test mocha --experimental-modules --config .mocharc ./**/__tests__/**/*.test.mjs",
+    "prepublish": "npm run lint && npm run test && npm run build"
+  },
+  "files": [
+    "dist/index.cjs",
+    "index.mjs",
+    "index.d.ts"
+  ],
+  "typings": "./index.d.ts",
+  "main": "./dist/index.cjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-chai-expect": "^2.1.0",
+    "eslint-plugin-chai-friendly": "^0.5.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "mocha": "^8.0.1",
+    "prettier": "^2.0.5",
+    "recast": "^0.20.4"
+  },
+  "dependencies": {}
+}
